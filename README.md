@@ -27,14 +27,14 @@ The required triples for retrieving venue information are desribed in [this diag
 # Trouble shooting
 The following URLs can be used to test data without passing through a cache.
 
-1. list of members in JSON 
-http://api.artsdata.ca/query?sparql=capacoa/members&frame=capacoa/member&format=jsonld&source=http://kg.artsdata.ca/culture-creates/artsdata-planet-capacoa/capacoa-members
+1. list of members in JSON
+http://api.artsdata.ca/query?sparql=https://raw.githubusercontent.com/culturecreates/artsdata-shortcode/refs/heads/master/public/sparql/members.sparql&source=http://kg.artsdata.ca/culture-creates/artsdata-planet-capacoa/capacoa-members
 
-2. Example Organization in JSON
-http://api.artsdata.ca/query?adid=K14-29&sparql=capacoa/member_detail2&frame=capacoa/member2&format=json
+3. Example Organization in JSON
+http://api.artsdata.ca/query?adid=K14-29&frame=capacoa/member2&format=json&sparql=https://raw.githubusercontent.com/culturecreates/artsdata-shortcode/refs/heads/master/public/sparql/member_detail.sparql
 
-3. Example Person in JSON
-http://api.artsdata.ca/query?adid=K14-141&sparql=capacoa/member_detail2&frame=capacoa/member2&format=json
+4. Example Person in JSON
+http://api.artsdata.ca/query?adid=K14-141&frame=capacoa/member2&format=json&sparql=https://raw.githubusercontent.com/culturecreates/artsdata-shortcode/refs/heads/master/public/sparql/member_detail.sparql
 
 
 # Local Wordpress Development
