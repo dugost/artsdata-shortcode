@@ -176,8 +176,8 @@ function artsdata_init(){
     $presentationFormat =  generalType( $data["additionalType"],"PresentingFormat" ) ;
     $occupation =  generalType( $data["additionalType"],"PresentingFormat" ) ;
     $artsdataId =  $_GET['uri'];
-    $wikidataId = isset($data["identifier"]) ? $data["identifier"] : null;
-    $wikidataUrl = "http://www.wikidata.org/entity/" . $wikidataId ;
+    $wikidataUrl = linkExtraction($data["sameAs"] , "wikidata.org");
+    $wikidataId = str_replace('http://www.wikidata.org/entity/', '', $wikidataUrl);
     $facebook = 'https://www.facebook.com/' . (isset($data["facebookId"]) ? $data["facebookId"] : '');
     $twitter = 'https://twitter.com/' . (isset($data["twitterUsername"]) ? $data["twitterUsername"] : '');
     $instagram = 'https://www.instagram.com/' . (isset($data["instagramUsername"]) ? $data["instagramUsername"] : '');
@@ -224,7 +224,7 @@ function artsdata_init(){
     $html .= '<div class="artsdata-links-wrapper">';
     $html .= '<p class="artsdata-artsdata-id">' . esc_html__( 'Artsdata ID:', 'artsdata-shortcodes' ) .' <a class="artsdata-link-id-value" href="' . $artsdataId . '">' . ltrim($artsdataId, "http://kg.artsdata.ca/resource/") . ' </a></p>';
     if ($wikidataId) {
-      $html .= '<p class="artsdata-wikidata-id">' . esc_html__( 'Wikidata ID:', 'artsdata-shortcodes' ) .' <a class="artsdata-link-id-value"  ' . dataMaintainer($rankedProperties, "identifier") . ' href="' .  $wikidataUrl . '">' . $wikidataId . ' </a></p>';
+      $html .= '<p class="artsdata-wikidata-id">' . esc_html__( 'Wikidata ID:', 'artsdata-shortcodes' ) .' <a class="artsdata-link-id-value" href="' . $wikidataUrl . '">' . $wikidataId . ' </a></p>';
     }
     $html .= '</div>';
     $html .= '<div class="artsdata-socials-wrapper">';
@@ -568,6 +568,10 @@ function artsdata_init(){
       if  (gettype($link) == 'string') {
         if ( strpos($link,  $detectionStr) !== false ) {
           $str = $link ;
+        }
+      } else {
+        if (isset($link['id']) && strpos($link['id'],  $detectionStr) !== false ) {
+          $str = $link['id'] ;
         }
       }
     }
