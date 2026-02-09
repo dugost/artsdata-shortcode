@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Artsdata Shortcodes
-Version: 2.0.11
+Version: 2.0.12
 Description: Collection of shortcodes to display data from Artsdata.ca.
 Changelog: Maintain MemberType_ind and MemberType_organization CSS classes for layout.
 Author: Culture Creates
@@ -111,10 +111,12 @@ function artsdata_init(){
     $j = json_decode( $body, true);
     $graph = $j['@graph'];
     usort($graph, function ($x, $y) {
-      if (languageService($x, 'name')  === languageService($y, 'name') ) {
+      $nameX = strtolower(languageService($x, 'name'));
+      $nameY = strtolower(languageService($y, 'name'));
+      if ($nameX === $nameY) {
           return 0;
       }
-      return languageService($x, 'name') < languageService($y, 'name') ? -1 : 1;
+      return $nameX < $nameY ? -1 : 1;
     });
 
     # view for list
