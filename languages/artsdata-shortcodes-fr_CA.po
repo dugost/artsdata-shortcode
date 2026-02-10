@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Artsdata Shortcodes 2.0.11\n"
+"Project-Id-Version: Artsdata Shortcodes 2.0.13\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/artsdata-"
 "shortcode\n"
 "Last-Translator: CAPACOA\n"
@@ -11,12 +11,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2022-05-09T13:16:55+00:00\n"
-"PO-Revision-Date: 2023-10-16 17:33+0000\n"
+"PO-Revision-Date: 2026-02-10 18:45+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: artsdata-shortcodes\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Loco-Version: 2.6.4; wp-6.1.1"
+
+#: artsdata-shortcodes.php:321
+msgid "About"
+msgstr "À propos&nbsp;:"
 
 #: artsdata-shortcodes.php:281
 msgid "Artistic Focus:"
@@ -29,10 +33,6 @@ msgstr "Identifiant Artsdata&nbsp;:"
 #. Plugin Name of the plugin
 msgid "Artsdata Shortcodes"
 msgstr ""
-
-#: artsdata-shortcodes.php:325
-msgid "About"
-msgstr "À propos&nbsp;:"
 
 #. Description of the plugin
 msgid "Collection of shortcodes to display data from Artsdata.ca."
